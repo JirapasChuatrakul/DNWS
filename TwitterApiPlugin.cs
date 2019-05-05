@@ -91,7 +91,7 @@ namespace DNWS
                     {
                         if (user != null)
                         {
-                            if (request.Method == "Get")
+                            if (request.Method == "GET")
                             {
                                 Twitter twit = new Twitter(user);
                                 string js = JsonConvert.SerializeObject(twit.GetUserTimeline());
