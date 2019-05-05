@@ -43,6 +43,8 @@ namespace DNWS
                 {
                     if (request.Method == "GET")
                     {
+                        //JSON is easy use to convert between JSON and .Net in these case the response code(200,400,...)
+                        //Ref. https://www.newtonsoft.com/json/help/html/SerializingJSON.htm
                         string js = JsonConvert.SerializeObject(GetUser());
                         response.body = Encoding.UTF8.GetBytes(js);
                     }
