@@ -7,7 +7,7 @@ angular.module('followingList', ['ngRoute'])
       var self = this;
 
       const requestOptions = {
-          headers: { 'X-session': $rootScope.x_session, "Content-Type": "application/json;charset=utf-8"}
+          headers: { 'X-session': $rootScope.x_session }
       };
 
       $http.get('http://localhost:8080/twitterapi/following/', requestOptions).then(function (response) {
@@ -20,7 +20,7 @@ angular.module('followingList', ['ngRoute'])
 		  });
 	  }
 	  self.sendUnFollow = function sendUnFollow(followingname){
-	  	  $http.defaults.headers.delete = { 'X-session': $rootScope.x_session , "Content-Type": "application/json;charset=utf-8"};
+	  	  $http.defaults.headers.delete = { 'X-session': $rootScope.x_session, "Content-Type": "application/json;charset=utf-8" };
 		  const data = "followingname=" + encodeURIComponent(followingname);
 		  console.log(data);
 		  $http.delete('http://localhost:8080/twitterapi/following/?' + data).then(function (response){
